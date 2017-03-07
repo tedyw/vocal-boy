@@ -13,12 +13,12 @@
 
 --Declarations here
 
---Snippet copied from http://w3.impa.br/~diego/software/luasocket/introduction.html#tcp
+--Snippet modified from http://w3.impa.br/~diego/software/luasocket/introduction.html#tcp
 function openConnection()
  -- load namespace
  local socket = require("socket")
  -- create a TCP socket and bind it to the local host, at any port
- local server = assert(socket.bind("*", 0))
+ local server = assert(socket.bind("127.0.0.1", 50414)) -- Local IP, arbitrary ephemeral port
  -- find out which port the OS chose for us
  local ip, port = server:getsockname()
  -- print a message informing what's up
