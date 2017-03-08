@@ -55,15 +55,15 @@ function setKey(key)
 end
 
 client = openConnection()
+client:settimeout(0) -- make non-blocking
 
-function fn() -- Whenever there is an update to the display (which is supposed to be every frame but is also called in some emulators during when the display is paused)
- -- receive the line
+while true do
  local line, err = client:receive()
- -- if there was no error, send it back to the client
  if not err then
   local key = processInput(line)
   setKey(key)
   client:send(line .. "\n") -- looks like something needs to be sent back to continue
  end
+
+ emu.frameadvance()
 end
-gui.register(fn)
