@@ -33,12 +33,29 @@ function closeConnection()
  client:close()
 end
 
+--May be needed depending on the exact input received. For now just trims the string.
+--Input: The exact name of a key surrounded by whitespace (might be subject to change)
+--Output: The exact name of a key. For VBA-rr, that is one of the following: A, B, select, start, right, left, up, down, R, L.
+function processInput(line)
+ return string.gsub(line, "%s+", "") --http://stackoverflow.com/a/10460780/1729441
+end
+
+--Set key as held for the next frame
+function setKey(key)
+ local c = {} --table of keys and their heldness
+ c[key] = true --set given key as held
+ joypad.set(1, c) --set table joypad 1
+end
+
 client = openConnection()
 
 function fn() -- Whenever there is an update to the display (which is supposed to be every frame but is also called in some emulators during when the display is paused)
  -- receive the line
  local line, err = client:receive()
  -- if there was no error, send it back to the client
- if not err then client:send(line .. "\n") end
+ if not err then
+  local key = processInput(line)
+  setKey(key)
+ end
 end
 gui.register(fn)
