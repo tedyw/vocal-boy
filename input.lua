@@ -12,6 +12,7 @@
 --Function skeleton from http://tasvideos.org/LuaScripting.html
 
 --Declarations here
+keys = {"A", "B", "select", "start", "right", "left", "up", "down", "R", "L"}
 
 --Opens a connection to 127.0.0.1:50414 and returns the client object.
 --Snippet modified from http://w3.impa.br/~diego/software/luasocket/introduction.html#tcp
@@ -33,11 +34,17 @@ function closeConnection()
  client:close()
 end
 
---May be needed depending on the exact input received. For now just trims the string.
+--May be needed depending on the exact input received. Also removes garbage of unknown origin.
 --Input: The exact name of a key surrounded by whitespace (might be subject to change)
---Output: The exact name of a key. For VBA-rr, that is one of the following: A, B, select, start, right, left, up, down, R, L.
+--Output: The exact name of a key as contained in keys, or nil if none was found.
 function processInput(line)
- return string.gsub(line, "%s+", "") --http://stackoverflow.com/a/10460780/1729441
+ for _, key in ipairs(keys) do
+  if string.find(line, key) ~= nil then
+   return key
+  end
+ end
+
+ return nil
 end
 
 --Set key as held for the next frame
@@ -56,6 +63,7 @@ function fn() -- Whenever there is an update to the display (which is supposed t
  if not err then
   local key = processInput(line)
   setKey(key)
+  client:send(line .. "\n") -- looks like something needs to be sent back to continue
  end
 end
 gui.register(fn)
