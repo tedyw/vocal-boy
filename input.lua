@@ -50,7 +50,7 @@ end
 --Set key as held for the next frame
 function setKey(key)
  local c = {} --table of keys and their heldness
- c[key] = true --set given key as held
+ if key ~= nil then c[key] = true end --set given key as held
  joypad.set(1, c) --set table joypad 1
 end
 
