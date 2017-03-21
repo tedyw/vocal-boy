@@ -18,7 +18,7 @@
 		</block>
 		<field name="start_state">
 			<prompt>Please say yes or no!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="state" expr="start_state"/>
 			    <if cond="state =='yes' || state =='start' || state =='yes please' || state =='sure' || state =='absolutely' || state =='yeah'">
@@ -40,7 +40,7 @@
 		</block>
 		<field name="controls_user_input">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="c_state" expr="controls_user_input"/>
 			    <if cond="c_state =='a button'">
@@ -59,7 +59,7 @@
 		</block>
 		<field name="cd_user_input">
 			<prompt>Please say A button to go forward or B button to go back!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="cd_state" expr="cd_user_input"/>
 			    <if cond="cd_state =='a button'">
@@ -80,7 +80,7 @@
 		</block>
 		<field name="cd_user_input_2">
 			<prompt>Please say A button to go forward or B button to go back!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="cd_state_2" expr="cd_user_input_2"/>
 			    <if cond="cd_state_2 =='a button'">
@@ -101,7 +101,7 @@
 		</block>
 		<field name="cd_user_input_3">
 			<prompt>Please say A button to go forward or B button to go back!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="cd_state_3" expr="cd_user_input_3"/>
 			    <if cond="cd_state_3 =='a button'">
@@ -122,7 +122,7 @@
 		</block>
 		<field name="sd_user_input">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="sd_state" expr="sd_user_input"/>
 			    <if cond="sd_state =='a button'">
@@ -141,7 +141,7 @@
 		</block>
 		<field name="sd_user_input_2">
 			<prompt>Please say A button to go forward or B button to go back!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="sd_state_2" expr="sd_user_input_2"/>
 			    <if cond="sd_state_2 =='a button'">
@@ -162,7 +162,7 @@
 		</block>
 		<field name="sd_user_input_3">
 			<prompt>Say A button and let your adventure begin! Or say B button to go back!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="sd_state_3" expr="sd_user_input_3"/>
 			    <if cond="sd_state_3 =='a button'">
@@ -180,7 +180,7 @@
 	<form id="introducing_state">
 		<field name="intro_user_input">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state" expr="intro_user_input"/>
 			    <if cond="intro_state =='a button'">
@@ -196,7 +196,7 @@
 	<form id="introducing_state_2">
 		<field name="intro_user_input_2">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_2" expr="intro_user_input_2"/>
 			    <if cond="intro_state_2 =='a button'">
@@ -212,7 +212,7 @@
 	<form id="introducing_state_3">
 		<field name="intro_user_input_3">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_3" expr="intro_user_input_3"/>
 			    <if cond="intro_state_3 =='a button'">
@@ -228,7 +228,7 @@
 	<form id="introducing_state_4">
 		<field name="intro_user_input_4">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_4" expr="intro_user_input_4"/>
 			    <if cond="intro_state_4 =='a button'">
@@ -244,7 +244,7 @@
 	<form id="introducing_state_5">
 		<field name="intro_user_input_5">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_5" expr="intro_user_input_5"/>
 			    <if cond="intro_state_5 =='a button'">
@@ -260,7 +260,7 @@
 	<form id="introducing_state_6">
 		<field name="intro_user_input_6">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_6" expr="intro_user_input_6"/>
 			    <if cond="intro_state_6 =='a button'">
@@ -276,7 +276,7 @@
 	<form id="introducing_state_7">
 		<field name="intro_user_input_7">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_7" expr="intro_user_input_7"/>
 			    <if cond="intro_state_7 =='a button'">
@@ -292,7 +292,7 @@
 	<form id="introducing_state_8">
 		<field name="intro_user_input_8">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_8" expr="intro_user_input_8"/>
 			    <if cond="intro_state_8 =='a button'">
@@ -308,7 +308,7 @@
 	<form id="introducing_state_9">
 		<field name="intro_user_input_9">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_9" expr="intro_user_input_9"/>
 			    <if cond="intro_state_9 =='a button'">
@@ -324,7 +324,7 @@
 	<form id="introducing_state_10">
 		<field name="intro_user_input_10">
 			<prompt>Please say A button to select, say Down to get the arrow down or say Up to get the arrow up!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_10" expr="intro_user_input_10"/>
 			    <if cond="intro_state_10 =='a button'">
@@ -346,7 +346,7 @@
 	<form id="introducing_state_11">
 		<field name="intro_user_input_11">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_11" expr="intro_user_input_11"/>
 			    <if cond="intro_state_11 =='a button'">
@@ -362,7 +362,7 @@
 	<form id="introducing_state_12">
 		<field name="intro_user_input_12">
 			<prompt>Please say Select to choose the word or say Right, Left, Up, Down to navigate! Say A button when you are done or say B button to go back!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_12" expr="intro_user_input_12"/>
 			    <if cond="intro_state_12 =='a button'">
@@ -393,7 +393,7 @@
 	<form id="introducing_state_13">
 		<field name="intro_user_input_13">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_13" expr="intro_user_input_13"/>
 			    <if cond="intro_state_13 =='a button'">
@@ -409,7 +409,7 @@
 	<form id="introducing_state_14">
 		<field name="intro_user_input_14">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_14" expr="intro_user_input_14"/>
 			    <if cond="intro_state_14 =='a button'">
@@ -425,7 +425,7 @@
 	<form id="introducing_state_15">
 		<field name="intro_user_input_15">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_15" expr="intro_user_input_15"/>
 			    <if cond="intro_state_15 =='a button'">
@@ -440,7 +440,7 @@
 	<form id="introducing_state_16">
 		<field name="intro_user_input_16">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_16" expr="intro_user_input_16"/>
 			    <if cond="intro_state_16 =='a button'">
@@ -456,7 +456,7 @@
 	<form id="introducing_state_17">
 		<field name="intro_user_input_17">
 			<prompt>Please say Select to choose the word or say Right, Left, Up, Down to navigate! Say A button when you are done!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_17" expr="intro_user_input_17"/>
 			    <if cond="intro_state_17 =='a button'">
@@ -484,7 +484,7 @@
 	<form id="introducing_state_18">
 		<field name="intro_user_input_18">
 			<prompt>Please say Select to choose the word or say Right, Left, Up, Down to navigate! Say A button when you are done!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_18" expr="intro_user_input_18"/>
 			    <if cond="intro_state_18 =='a button'">
@@ -506,7 +506,7 @@
 	<form id="introducing_state_19">
 		<field name="intro_user_input_19">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_19" expr="intro_user_input_19"/>
 			    <if cond="intro_state_19 =='a button'">
@@ -522,7 +522,7 @@
 	<form id="introducing_state_20">
 		<field name="intro_user_input_20">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_20" expr="intro_user_input_20"/>
 			    <if cond="intro_state_20 =='a button'">
@@ -538,7 +538,7 @@
 	<form id="introducing_state_21">
 		<field name="intro_user_input_21">
 			<prompt>Please say A button to go forward!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_21" expr="intro_user_input_21"/>
 			    <if cond="intro_state_21 =='a button'">
@@ -554,7 +554,7 @@
 	<form id="introducing_state_22">
 		<field name="intro_user_input_22">
 			<prompt>Good luck! Say B button to quit the game!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="intro_state_22" expr="intro_user_input_22"/>
 			    <if cond="intro_state_22 =='a button'">
@@ -588,7 +588,7 @@
 		</block>
 		<field name="quit_user_input">
 			<prompt>Please say yes or no!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="quit_state" expr="quit_user_input"/>
 			    <if cond="quit_state =='yes' || quit_state =='exit' || quit_state =='yes please' || quit_state =='sure' || quit_state =='absolutely' || quit_state =='yeah'">
@@ -609,7 +609,7 @@
 		</block>
 		<field name="end_user_input">
 			<prompt>Please say yes or no!</prompt>
-			<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+			<grammar src="./commands.gram" type="application/x-jsgf"/>
 		    <filled>
 		    	<var name="end_state" expr="end_user_input"/>
 			    <if cond="end_state =='yes' || end_state =='exit' || end_state =='yes please' || end_state =='sure' || end_state =='absolutely' || end_state =='yeah'">

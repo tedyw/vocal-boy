@@ -1,0 +1,22 @@
+{
+  "name": "vocal-boy",
+  "version": "1.0.0",
+  "description": "A voice control application for emulators and other arbitrary software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedyw/vocal-boy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tedyw/vocal-boy/issues"
+  },
+  "homepage": "https://github.com/tedyw/vocal-boy#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

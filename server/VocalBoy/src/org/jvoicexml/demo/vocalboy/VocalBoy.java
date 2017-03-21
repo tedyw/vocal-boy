@@ -82,94 +82,6 @@ public final class VocalBoy {
     }
 
     /**
-     * Create a simple VoiceXML document containing the hello world phrase.
-     * @return Created VoiceXML document, <code>null</code> if an error
-     * occurs.
-     */
-    private VoiceXmlDocument createHelloWorld() {
-        final VoiceXmlDocument document;
-
-        try {
-            document = new VoiceXmlDocument();
-        } catch (ParserConfigurationException pce) {
-            pce.printStackTrace();
-
-            return null;
-        }
-
-        final Vxml vxml = document.getVxml();
-
-        final Meta author = vxml.addChild(Meta.class);
-        author.setName("author");
-        author.setContent("JVoiceXML group");
-
-        final Meta copyright = vxml.addChild(Meta.class);
-        copyright.setName("copyright");
-        copyright.setContent("2005-2006 JVoiceXML group - "
-                             + "http://jvoicexml.sourceforge.net");
-
-        final Form form = vxml.addChild(Form.class);
-        final Block block = form.addChild(Block.class);
-        block.addText("Hello Cristina, how are you? I love you mucho!");
-
-        final Goto next = block.addChild(Goto.class);
-        next.setNext("#say_goodbye");
-
-        final Form goodbyeForm = vxml.addChild(Form.class);
-        goodbyeForm.setId("say_goodbye");
-        final Block goodbyeBlock = goodbyeForm.addChild(Block.class);
-        final Prompt prompt = goodbyeBlock.addChild(Prompt.class);
-        prompt.addText("Mi amor!");
-
-        return document;
-    }
-
-    /**
-     * Print the given VoiceXML document to <code>stdout</code>. Does nothing
-     * if an error occurs.
-     * @param document The VoiceXML document to print.
-     * @return VoiceXML document as an XML string, <code>null</code> in case
-     * of an error.
-     */
-    private String printDocument(final VoiceXmlDocument document) {
-        final String xml;
-        try {
-            xml = document.toXml();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-
-            return null;
-        }
-
-        System.out.println(xml);
-
-        return xml;
-    }
-
-    /**
-     * Add the given document as a single document application.
-     * @param document The only document in this application.
-     * @return URI of the first document.
-     */
-    private URI addDocument(final VoiceXmlDocument document) {
-        MappedDocumentRepository repository;
-        try {
-            repository = (MappedDocumentRepository)
-                         context.lookup("MappedDocumentRepository");
-        } catch (javax.naming.NamingException ne) {
-            LOGGER.error("error obtaining the documentrepository", ne);
-
-            return null;
-        }
-
-        final URI uri = repository.getUri("/root");
-        repository.addDocument(uri, document.toString());
-        LOGGER.error(uri);
-
-        return uri;
-    }
-
-    /**
      * Calls the VoiceXML interpreter context to process the given XML document.
      * @param uri URI of the first document to load
      * @exception JVoiceXMLEvent
@@ -189,9 +101,7 @@ public final class VocalBoy {
         final Session session = jvxml.createSession(null);
 
         session.call(uri);
-
         session.waitSessionEnd();
-
         session.close();
     }
 
@@ -201,12 +111,11 @@ public final class VocalBoy {
      */
     public static void main(final String[] args) {
 
+        // Bypass security policy
         System.setProperty("java.security.policy","./config/jvoicexml.policy");
 
         if (LOGGER.isInfoEnabled()) {
-            LOGGER.info("Starting 'hello world' demo for JVoiceXML...");
-            LOGGER.info("(c) 2005-2007 by JVoiceXML group - "
-                        + "http://jvoicexml.sourceforge.net/");
+            LOGGER.info("Starting VocalBoy for JVoiceXML...");
         }
 
         final VocalBoy demo = new VocalBoy();
@@ -215,21 +124,6 @@ public final class VocalBoy {
         final File file = new File("vocalboydialog.vxml");
         final URI uri = file.toURI();
         LOGGER.info(uri);
-
-        //final VoiceXmlDocument document = demo.createHelloWorld();
-        /*if (document == null) {
-            return;
-        }*/
-
-        //final String xml = demo.printDocument(document);
-        /*if (xml == null) {
-            return;
-        }
-*/
-        /*final URI uri = demo.addDocument(document);
-        if (uri == null) {
-            return;
-        }*/
 
         try {
             demo.interpretDocument(uri);
