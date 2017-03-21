@@ -53,19 +53,23 @@ import org.jvoicexml.client.GenericClient;
  *
  * @author Dirk Schnelle
  * @version $Revision: 239 $
- *
- * <p>
- * Copyright &copy; 2005-2007 JVoiceXML group -
- * <a href="http://jvoicexml.sourceforge.net">
- * http://jvoicexml.sourceforge.net/</a>
- * </p>
+ *          <p>
+ *          <p>
+ *          Copyright &copy; 2005-2007 JVoiceXML group -
+ *          <a href="http://jvoicexml.sourceforge.net">
+ *          http://jvoicexml.sourceforge.net/</a>
+ *          </p>
  */
 public final class VocalBoy {
-    /** Logger for this class. */
+    /**
+     * Logger for this class.
+     */
     private static final Logger LOGGER =
             Logger.getLogger(VocalBoy.class);
 
-    /** The JNDI context. */
+    /**
+     * The JNDI context.
+     */
     private Context context;
 
     /**
@@ -83,12 +87,12 @@ public final class VocalBoy {
 
     /**
      * Calls the VoiceXML interpreter context to process the given XML document.
+     *
      * @param uri URI of the first document to load
-     * @exception JVoiceXMLEvent
-     *            Error processing the call.
+     * @throws JVoiceXMLEvent Error processing the call.
      */
     private void interpretDocument(final URI uri)
-        throws JVoiceXMLEvent {
+            throws JVoiceXMLEvent {
         JVoiceXml jvxml;
         try {
             jvxml = (JVoiceXml) context.lookup("JVoiceXml");
@@ -107,12 +111,13 @@ public final class VocalBoy {
 
     /**
      * The main method.
+     *
      * @param args Command line arguments. None expected.
      */
     public static void main(final String[] args) {
 
         // Bypass security policy
-        System.setProperty("java.security.policy","./config/jvoicexml.policy");
+        System.setProperty("java.security.policy", "./config/jvoicexml.policy");
 
         if (LOGGER.isInfoEnabled()) {
             LOGGER.info("Starting VocalBoy for JVoiceXML...");
@@ -121,14 +126,23 @@ public final class VocalBoy {
         final VocalBoy demo = new VocalBoy();
 
         final GenericClient client = new GenericClient();
-        final File file = new File("vocalboydialog.vxml");
-        final URI uri = file.toURI();
-        LOGGER.info(uri);
+        final URI uri;
 
         try {
-            demo.interpretDocument(uri);
-        } catch (org.jvoicexml.event.JVoiceXMLEvent e) {
-            LOGGER.error("error processing the document", e);
+            uri = new URI("http://localhost:4001/VocalBoy/vocalboydialog.vxml");
+            LOGGER.info(uri);
+
+            try {
+                demo.interpretDocument(uri);
+            } catch (org.jvoicexml.event.JVoiceXMLEvent e) {
+                LOGGER.error("error processing the document", e);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
         }
+
+
     }
 }

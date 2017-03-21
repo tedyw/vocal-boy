@@ -57,3 +57,8 @@ LOCAL_CLASSPATH=${LOCAL_CLASSPATH}:"${JVOICEXML_LIB}/jvxml.jar"
 cd ${JVOICEXML_HOME}
 
 $JAVA_CMD $VMOPTIONS -classpath $LOCAL_CLASSPATH org.jvoicexml.RemoteShutdown
+
+# Kill HTTP Server
+cd ${JVOICEXML_BIN}
+kill -9 `cat http_server_pid` > /dev/null 2>&1
+rm http_server_pid

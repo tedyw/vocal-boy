@@ -24,6 +24,21 @@ if ! which "$JAVA_CMD" >/dev/null ; then
     exit 1
 fi
 
+# Check if node.js is installed
+HTTP_SERVER_CMD=""
+if ! command -v node > /dev/null 2>&1; then
+    echo "Node.js isn't installed."
+    exit 1
+else
+    if ! command -v http-server > /dev/null 2>&1; then
+        echo "The required npm package http-server isn't installed. Please run npm install http-server -g."
+        exit 1
+    else
+        # Utilize a simple http server in node.js
+        HTTP_SERVER_CMD="http-server"
+    fi
+fi
+
 VMOPTIONS=-mx256m
 
 #
@@ -50,6 +65,10 @@ cd "${oldpwd}"; unset oldpwd
 JVOICEXML_HOME=`dirname "${JVOICEXML_BIN}"`
 JVOICEXML_LIB="${JVOICEXML_HOME}/lib"
 
+# Start HTTP Server in background
+nohup $HTTP_SERVER_CMD $JVOICEXML_HOME -p 4001 > /dev/null 2>&1 &
+echo $! > "${JVOICEXML_BIN}/http_server_pid"
+
 LOCAL_CLASSPATH="$JVOICEXML_HOME/config"
 LOCAL_CLASSPATH=${LOCAL_CLASSPATH}:"${JVOICEXML_LIB}/commons-logging.jar"
 LOCAL_CLASSPATH=${LOCAL_CLASSPATH}:"${JVOICEXML_LIB}/commons-pool-1.3.jar"
@@ -72,3 +91,8 @@ LOCAL_CLASSPATH=${LOCAL_CLASSPATH}:"${JVOICEXML_LIB}/jvxml-xml.jar"
 cd ${JVOICEXML_HOME}
 
 $JAVA_CMD $VMOPTIONS -classpath $LOCAL_CLASSPATH org.jvoicexml.JVoiceXmlMain
+
+# Kill HTTP Server
+cd ${JVOICEXML_BIN}
+kill -9 `cat http_server_pid` > /dev/null 2>&1
+rm http_server_pid
