@@ -1,0 +1,13 @@
+1.	Installera Apache Ant 1.9.9 from http://ant.apache.org/bindownload.cgi
+
+2.	Byt ut src i alla grammar element i hela dokumentet, VocalBoy_JVoiceXML/VocalBoy/vocalboydialog.vxml, som ser ut som nedan:
+
+	<grammar src="file:/F:/JVoiceXML_pokemon/VocalBoy_JVoiceXML/VocalBoy/commands.gram" type="application/x-jsgf"/>
+
+	(whitespace i src adressen måste ersättas med %20)
+
+3.	Kör JVoice browser bin/JVoiceXML.exe med dubble klicka eller från terminal. (kör bin/Shutdown.exe när ni vill avsluta den. När man har fått ett error, så är det bra om man startar om den.)
+
+4.	Navigera till mappen "VocalBoy_JVoiceXML/VocalBoy" i terminalen och kör "ant run", så kommer JVoiceXML att köras och ni kommer att höra manen pratar.
+
+Kommentar: vocalboydialog.vxml är anpassat voicexml dialog till spelet och config/commands.gram och VocalBoy/commands.gram innehåller alla kommandon.

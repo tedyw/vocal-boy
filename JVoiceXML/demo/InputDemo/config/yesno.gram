@@ -1,0 +1,13 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for the input demo of JVoiceXML.
+ * $Id: movies.gram,v 1.1 2005/04/12 07:19:50 schnelle Exp $
+ */
+
+grammar yesno;
+
+/**
+ * A "watch a movie" gramamr
+ */
+public <yesno> =     yes  | no;

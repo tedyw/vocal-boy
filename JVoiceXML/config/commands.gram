@@ -1,0 +1,14 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for the input demo of JVoiceXML.
+ * $Id: movies.gram,v 1.3 2006/03/14 08:22:34 schnelle Exp $
+ */
+
+grammar commands;
+
+/**
+ * A "watch a movie" gramamr
+ */
+
+public <commands> = yes | no | start | exit | yes please | sure | absolutely | yeah | a button | b button | select | start | right | left | up | down | r button| l button;
